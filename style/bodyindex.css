@@ -1,73 +1,116 @@
-html,body{
-    width: 100%;
-    overflow-x: hidden;
+/* ================= GLOBAL ================= */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f7f9fc;
+    color: #333;
 }
 
-/* CONTAINER */
+h1, h2, h3, h4 {
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+/* ================= HERO ================= */
+.hero {
+    position: relative;
+    padding: 80px 0;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    overflow: hidden;
+}
+
+.accent-top,
+.accent-bottom {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+}
+
+.accent-top {
+    top: -100px;
+    left: -100px;
+}
+
+.accent-bottom {
+    bottom: -120px;
+    right: -120px;
+}
+
 .home-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
     position: relative;
     z-index: 2;
-    max-width: 1100px;
-    margin: auto;
-    padding: 80px 50px;
 }
 
-/* INTRO */
+/* ================= INTRO ================= */
+.home-intro {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
 .home-intro h1 {
-    font-size: 42px;
-    color: #1E40AF;
+    font-size: 38px;
     margin-bottom: 15px;
 }
 
 .home-intro p {
-    font-size: 18px;
-    color: #374151;
-    max-width: 650px;
-    margin-bottom: 30px;
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.7;
+    opacity: 0.9;
 }
 
-/* BUTTON */
 .btn-primary {
     display: inline-block;
-    padding: 14px 28px;
-    background-color: #1E40AF;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
+    margin-top: 25px;
+    padding: 12px 28px;
+    background: #ffb703;
+    color: #000;
     font-weight: 600;
-    transition: background-color 0.3s ease;
+    border-radius: 30px;
+    transition: 0.3s;
 }
 
 .btn-primary:hover {
-    background-color: #152e7e;
+    background: #ffd166;
+    transform: translateY(-2px);
 }
 
-/* VISI MISI */
+/* ================= VISI MISI ================= */
 .visi-misi {
-    margin-top: 80px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 70px;
 }
 
-.visi-misi h2 {
-    color: #1E40AF;
-    margin-bottom: 10px;
+.visi, .misi {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 14px;
+    color: #333;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
-.visi-misi p,
-.visi-misi li {
-    color: #4B5563;
-}
-
-/* LAYANAN */
+/* ================= LAYANAN ================= */
 .layanan {
-    margin-top: 80px;
+    margin-bottom: 70px;
 }
 
 .layanan h2 {
-    color: #1E40AF;
-    margin-bottom: 30px;
+    text-align: center;
+    margin-bottom: 35px;
 }
 
 .layanan-grid {
@@ -77,43 +120,102 @@ html,body{
 }
 
 .layanan-card {
-    background-color: white;
+    background: #ffffff;
     padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: 0.3s;
 }
 
 .layanan-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
 }
 
-/* KEUNGGULAN */
+/* ================= KEUNGGULAN ================= */
 .keunggulan {
-    margin-top: 80px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 14px;
+    margin-bottom: 70px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
-.keunggulan h2 {
-    color: #1E40AF;
+.keunggulan ul li {
+    margin-bottom: 10px;
+}
+
+/* ================= ARMADA ================= */
+.armada {
+    margin-bottom: 70px;
+}
+
+.armada h2 {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.armada-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.armada-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.armada-card i {
+    font-size: 40px;
+    color: #ffb703;
     margin-bottom: 15px;
 }
 
-.keunggulan li {
-    color: #4B5563;
-    margin-bottom: 6px;
+/* ================= CARA SEWA ================= */
+.cara-sewa {
+    margin-bottom: 70px;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .visi-misi {
-        grid-template-columns: 1fr;
-    }
+.cara-sewa h2 {
+    text-align: center;
+    margin-bottom: 35px;
+}
 
-    .home-container {
-        padding: 60px 25px;
-    }
+.cara-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 25px;
+}
 
-    .home-intro h1 {
-        font-size: 34px;
-    }
+.cara-step {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.cara-step span {
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    background: #ffb703;
+    color: #000;
+    font-weight: 700;
+    border-radius: 50%;
+    line-height: 45px;
+    margin-bottom: 10px;
+}
+
+/* ================= CTA ================= */
+.cta-home {
+    text-align: center;
+    background: linear-gradient(135deg, #ffb703, #ffd166);
+    padding: 50px 30px;
+    border-radius: 18px;
+    color: #000;
 }
