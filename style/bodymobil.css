@@ -1,0 +1,161 @@
+.navbar-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.car-section{
+    position: relative;
+    padding:60px 40px;
+    background-color: #F9FAFB;
+    overflow: hidden;
+}
+
+.section-title{
+    text-align: center;
+    font-size: 32px;
+    color: #1E40AF;
+    margin-bottom: 40px;
+}
+
+.section-title,.car-container{
+    position: relative;
+    z-index: 2;
+}
+
+.car-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 30px;
+}
+
+.car-card{
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease,box-shadow 0.3s ease;
+
+}
+
+.car-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15)
+}
+
+/* IMAGE */
+.car-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* TEXT */
+.car-card h3 {
+    margin: 15px 0 8px;
+    font-size: 20px;
+}
+
+.price {
+    color: #1E40AF;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* BUTTON */
+.car-card button {
+    background-color: #1E40AF;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.car-card button:hover {
+    background-color: #1E3A8A;
+}
+
+.brand-dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 9999;
+}
+
+/* TOMBOL */
+.dropdown-btn {
+    background-color: #14255c;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* MENU */
+.dropdown-menu {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    display: none;
+
+    list-style: none;
+    margin: 0;
+    padding: 8px 0;
+
+    background-color: white;
+    width: 100;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+
+    transition: all 0.3s ease;
+}
+
+.dropdown-menu.show{
+    display: block;
+}
+
+/* MUNCUL SAAT HOVER */
+.brand-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    border-radius: 5px;
+}
+
+/* ITEM */
+.dropdown-menu li a {
+    display: block;
+    padding: 12px 16px;
+    color: #1E40AF;
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #FACC15;
+    color: #1E3A8A;
+}
+
+.dropdown-menu button {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 12px 16px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 15px;
+    color: #1E40AF;
+}
+
+.dropdown-menu button:hover {
+    background-color: #FACC15;
+}
+
+

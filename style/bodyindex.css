@@ -1,0 +1,119 @@
+html,body{
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* CONTAINER */
+.home-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: auto;
+    padding: 80px 50px;
+}
+
+/* INTRO */
+.home-intro h1 {
+    font-size: 42px;
+    color: #1E40AF;
+    margin-bottom: 15px;
+}
+
+.home-intro p {
+    font-size: 18px;
+    color: #374151;
+    max-width: 650px;
+    margin-bottom: 30px;
+}
+
+/* BUTTON */
+.btn-primary {
+    display: inline-block;
+    padding: 14px 28px;
+    background-color: #1E40AF;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #152e7e;
+}
+
+/* VISI MISI */
+.visi-misi {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.visi-misi h2 {
+    color: #1E40AF;
+    margin-bottom: 10px;
+}
+
+.visi-misi p,
+.visi-misi li {
+    color: #4B5563;
+}
+
+/* LAYANAN */
+.layanan {
+    margin-top: 80px;
+}
+
+.layanan h2 {
+    color: #1E40AF;
+    margin-bottom: 30px;
+}
+
+.layanan-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.layanan-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.layanan-card:hover {
+    transform: translateY(-5px);
+}
+
+/* KEUNGGULAN */
+.keunggulan {
+    margin-top: 80px;
+}
+
+.keunggulan h2 {
+    color: #1E40AF;
+    margin-bottom: 15px;
+}
+
+.keunggulan li {
+    color: #4B5563;
+    margin-bottom: 6px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .visi-misi {
+        grid-template-columns: 1fr;
+    }
+
+    .home-container {
+        padding: 60px 25px;
+    }
+
+    .home-intro h1 {
+        font-size: 34px;
+    }
+}

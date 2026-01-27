@@ -1,0 +1,113 @@
+<?php
+session_start();
+include '../../koneksi/koneksi.php';
+
+if (!isset($_SESSION['admin_login'])) {
+    header("Location: login.php");
+    exit;
+}
+
+$sql = "SELECT * FROM pembayaran";
+$result = mysqli_query($conn, $sql);
+$total = mysqli_num_rows($result);
+?>
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Data Transaksi</title>
+
+    <link rel="stylesheet" href="../style/style.css"> <!--header -->
+    <link rel="stylesheet" href="../style/data_mobil.css"> <!-- table -->
+    <link rel="stylesheet" href="../../style/dashboard.css"> <!-- side-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="dashboard-wrapper">
+
+        <aside class="sidebar">
+            <h2 class="sidebar-title">Admin Panel</h2>
+
+            <ul class="sidebar-menu">
+                <li><a href="../index.php"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+                <li><a href="data_mobil.php"><i class="fa-solid fa-car"></i> Data Mobil</a></li>
+                <li><a href="data_user.php"><i class="fa-solid fa-users"></i> Data User</a></li>
+                <li><a href="data_transaksi.php"><i class="fa-solid fa-file-invoice"></i> Transaksi</a></li>
+                <li><a href="#"><i class="fa-solid fa-gear"></i> Pengaturan</a></li>
+            </ul>
+
+            <a href="../logout.php" class="logout-btn">
+                <i class="fa-solid fa-right-from-bracket"></i> Logout
+            </a>
+        </aside>
+
+        <main class="dashboard-content">
+
+            <header class="dashboard-header">
+                <h1>Data Transaksi</h1>
+                <span>Halo, <strong><?= $_SESSION['admin_username']; ?></strong></span>
+            </header>
+
+            <div class="container-navbar">
+                <ul class="ul-navbar">
+                    <li class="li-navbar"><a href="data_transaksi.php" class="a-navbar">Data Transaksi</a></li>
+                    <li class="li-navbar"><a href="data_penyewaan.php" class="a-navbar">Data Penyewaan</a></li>
+                    <li class="li-navbar"><a href="#" class="a-navbar">#</a></li>
+                </ul>
+            </div>
+
+            <section class="table-wrapper">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>ID Sewa</th>
+                            <th>Metode</th>
+                            <th>Status</th>
+                            <th>Tanggal Bayar</th>
+                            <th>Jumlah Bayar</th>
+                            <th>Bukti Pembayaran</th>
+                            <th colspan="2">Aksi</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <?php if ($total == 0): ?>
+                            <tr>
+                                <td colspan="8" class="empty">Data mobil belum tersedia</td>
+                            </tr>
+                        <?php else: ?>
+                            <?php $i = 1; ?>
+                            <?php while ($row = mysqli_fetch_assoc($result)): ?>
+                                <tr>
+                                    <td><?= $i++; ?></td>
+                                    <td><?= $row['id_sewa'] ?></td>
+                                    <td><?= $row['metode'] ?></td>
+                                    <td><?= $row['status'] ?></td>
+                                    <td><?= $row['tanggal_bayar'] ?></td>
+                                    <td>Rp <?= number_format($row['jumlah_bayar'], 0, ',', '.') ?></td>
+                                    
+                                    <td>
+                                        <img src="../../uploads/bukti/<?= $row['foto_pembayaran'] ?>" class="foto">
+                                    </td>
+                                    <td><a href="" class="btn-action btn-delete">Tolak</a></td>
+                                    <td><a href="terima_transaksi.php?id=<?= $row['id_pembayaran']?>"
+                                    onclick="return confirm('Terima Transaksi Ini?')"
+                                    class="btn-action btn-accept">Terima</a></td>
+                                </tr>
+                            <?php endwhile; ?>
+                        <?php endif; ?>
+                    </tbody>
+                </table>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: calc(100vh - 100px);
+    position: relative;
+    z-index: 2;
+    padding-top: 20px ;
+    max-height: 65vh;
+    overflow-y: auto;
+}
+
+.container-table {
+    background: #fff;
+    padding: 40px 50px;
+    border-radius: 18px;
+    width: 850px;
+    box-shadow: 1px 10px 25px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 10px 25px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 10px 25px 0px rgba(0,0,0,0.75);
+}
+
+
+.container-table::before {
+    content: "DAFTAR AKUN";
+    display: block;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+
+.container-table table {
+    width: 100%;
+    border-spacing: 20px 15px;
+}
+
+
+.container-table label {
+    background: #e5e5e5;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    display: inline-block;
+    min-width: 160px;
+}
+
+
+.container-table input,
+.container-table textarea {
+    width: 100%;
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container-table textarea {
+    resize: none;
+    height: 90px;
+}
+
+.container-table input:focus,
+.container-table textarea:focus {
+    border-color: #1E40AF;
+}
+
+
+.btn-submit {
+    margin-top: 25px;
+    padding: 12px 40px;
+    background: #22c55e;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background: #16a34a;
+}
+
+.password-wrapper{
+    position: relative;
+}
+
+.password-wrapper input{
+    padding-right: 45px;
+}
+
+.password-wrapper i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #777;
+    font-size: 18px;
+}
+
+.password-wrapper i:hover{
+    color: #1E40AF;
+}
