@@ -7,10 +7,16 @@ body {
 
 h1, h2, h3, h4 {
     font-weight: 600;
+    color: black;
+    
 }
 
 a {
     text-decoration: none;
+}
+
+p,ul,li{
+    color: black;
 }
 
 ul {
@@ -21,7 +27,6 @@ ul {
 .hero {
     position: relative;
     padding: 80px 0;
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     color: #fff;
     overflow: hidden;
 }
@@ -120,7 +125,7 @@ ul {
 }
 
 .layanan-card {
-    background: #ffffff;
+    background: whitesmoke;
     padding: 25px;
     border-radius: 14px;
     text-align: center;
@@ -130,6 +135,7 @@ ul {
 
 .layanan-card:hover {
     transform: translateY(-6px);
+    background-color: #ffffff;
 }
 
 /* ================= KEUNGGULAN ================= */
@@ -218,4 +224,63 @@ ul {
     padding: 50px 30px;
     border-radius: 18px;
     color: #000;
+}
+
+.slider {
+    position: relative;
+    max-width: 1020px;
+    height: 574px;
+    margin: 30px auto;
+    overflow: hidden;
+    margin-top: 20px;
+    border-radius: 16px;
+}
+
+.slides {
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: none;
+}
+
+.slide.active {
+    display: block;
+}
+
+/* BUTTON */
+.nav-prev,
+.nav-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 46px;
+    height: 46px;
+    background: rgba(0,0,0,0.6);
+    border: none;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.nav-prev:hover,
+.nav-next:hover {
+    background: rgba(0,0,0,0.85);
+}
+
+.nav-prev {
+    left: 20px;
+}
+
+.nav-next {
+    right: 20px;
 }

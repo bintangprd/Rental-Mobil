@@ -1,4 +1,4 @@
-<?php 
+<?php
 include 'koneksi/koneksi.php';
 session_start();
 ?>
@@ -18,147 +18,189 @@ session_start();
 
 <body>
 
-<!-- HEADER -->
-<?php include 'layout/header.php'; ?>
-<!-- HEADER END -->
+    <!-- HEADER -->
+    <?php include 'layout/header.php'; ?>
+    <!-- HEADER END -->
 
-<section class="hero">
-    <div class="accent-top"></div>
-    <div class="accent-bottom"></div>
-
-    <div class="home-container">
-
-        <!-- INTRO -->
-        <div class="home-intro">
-            <h1>Solusi Rental Mobil Terpercaya</h1>
-            <p>
-                Kami menyediakan layanan rental mobil yang aman, nyaman, dan terjangkau
-                untuk kebutuhan pribadi, bisnis, maupun wisata Anda.
-            </p>
-
-            <a href="mobil.php" class="btn-primary">Lihat Mobil</a>
+    <div class="slider"> <!-- IMAGE SLIDE -->
+        <div class="slides">
+            <img src="uploads/promo/promo1.jpg" alt="promo1" class="slide active">
+            <img src="uploads/promo/promo2.jpg" alt="promo2" class="slide">
+            <img src="uploads/promo/promo3.jpeg" alt="promo3" class="slide">
         </div>
 
-        <!-- VISI & MISI -->
-        <div class="visi-misi">
-            <div class="visi">
-                <h2>Visi</h2>
-                <p>
-                    Menjadi perusahaan rental mobil terpercaya yang mengutamakan
-                    pelayanan terbaik dan kepuasan pelanggan.
-                </p>
-            </div>
+        <button class="nav-prev" onclick="prevSlide()">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
 
-            <div class="misi">
-                <h2>Misi</h2>
-                <ul>
-                    <li>Menyediakan kendaraan yang aman dan terawat</li>
-                    <li>Memberikan harga yang kompetitif</li>
-                    <li>Pelayanan cepat, ramah, dan profesional</li>
-                    <li>Mengutamakan kenyamanan pelanggan</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- LAYANAN -->
-        <div class="layanan">
-            <h2>Layanan Kami</h2>
-
-            <div class="layanan-grid">
-                <div class="layanan-card">
-                    <h3>Sewa Harian</h3>
-                    <p>Solusi praktis untuk perjalanan singkat.</p>
-                </div>
-
-                <div class="layanan-card">
-                    <h3>Sewa Mingguan</h3>
-                    <p>Lebih hemat untuk penggunaan menengah.</p>
-                </div>
-
-                <div class="layanan-card">
-                    <h3>Sewa Bulanan</h3>
-                    <p>Cocok untuk kebutuhan bisnis.</p>
-                </div>
-
-                <div class="layanan-card">
-                    <h3>Dengan Sopir</h3>
-                    <p>Nyaman tanpa repot menyetir.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- KEUNGGULAN -->
-        <div class="keunggulan">
-            <h2>Kenapa Memilih Kami?</h2>
-            <ul>
-                <li>Armada lengkap & terawat</li>
-                <li>Proses pemesanan mudah</li>
-                <li>Harga transparan</li>
-                <li>Customer support responsif</li>
-            </ul>
-        </div>
-
-        <!-- ARMADA FAVORIT -->
-        <div class="armada">
-            <h2>Armada Favorit</h2>
-
-            <div class="armada-grid">
-                <div class="armada-card">
-                    <i class="fa-solid fa-car"></i>
-                    <h4>Toyota Avanza</h4>
-                    <p>Nyaman dan irit untuk keluarga.</p>
-                </div>
-
-                <div class="armada-card">
-                    <i class="fa-solid fa-car-side"></i>
-                    <h4>Fortuner</h4>
-                    <p>Tangguh dan elegan.</p>
-                </div>
-
-                <div class="armada-card">
-                    <i class="fa-solid fa-van-shuttle"></i>
-                    <h4>Hiace</h4>
-                    <p>Ideal untuk perjalanan rombongan.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- CARA SEWA -->
-        <div class="cara-sewa">
-            <h2>Cara Sewa Mobil</h2>
-
-            <div class="cara-grid">
-                <div class="cara-step">
-                    <span>1</span>
-                    <p>Pilih mobil</p>
-                </div>
-                <div class="cara-step">
-                    <span>2</span>
-                    <p>Isi form sewa</p>
-                </div>
-                <div class="cara-step">
-                    <span>3</span>
-                    <p>Lakukan pembayaran</p>
-                </div>
-                <div class="cara-step">
-                    <span>4</span>
-                    <p>Mobil siap digunakan</p>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- CTA -->
-        <div class="cta-home">
-            <h2>Siap Memulai Perjalanan?</h2>
-            <p>Pilih mobil terbaik dan nikmati perjalanan tanpa ribet.</p>
-            <a href="mobil.php" class="btn-primary">Sewa Sekarang</a>
-        </div>
+        <button class="nav-next" onclick="nextSlide()">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
 
     </div>
-</section>
 
-<?php include 'layout/footer.php'; ?>
+    <section class="hero">
+        <div class="accent-top"></div>
+        <div class="accent-bottom"></div>
+
+        <div class="home-container">
+
+            <!-- INTRO -->
+            <div class="home-intro">
+                <h1>Solusi Rental Mobil Terpercaya</h1>
+                <p>
+                    Kami menyediakan layanan rental mobil yang aman, nyaman, dan terjangkau
+                    untuk kebutuhan pribadi, bisnis, maupun wisata Anda.
+                </p>
+
+                <a href="mobil.php" class="btn-primary">Lihat Mobil</a>
+            </div>
+
+            <!-- VISI & MISI -->
+            <div class="visi-misi">
+                <div class="visi">
+                    <h2>Visi</h2>
+                    <p>
+                        Menjadi perusahaan rental mobil terpercaya yang mengutamakan
+                        pelayanan terbaik dan kepuasan pelanggan.
+                    </p>
+                </div>
+
+                <div class="misi">
+                    <h2>Misi</h2>
+                    <ul>
+                        <li>Menyediakan kendaraan yang aman dan terawat</li>
+                        <li>Memberikan harga yang kompetitif</li>
+                        <li>Pelayanan cepat, ramah, dan profesional</li>
+                        <li>Mengutamakan kenyamanan pelanggan</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- LAYANAN -->
+            <div class="layanan">
+                <h2>Layanan Kami</h2>
+
+                <div class="layanan-grid">
+                    <div class="layanan-card">
+                        <h3>Sewa Harian</h3>
+                        <p>Solusi praktis untuk perjalanan singkat.</p>
+                    </div>
+
+                    <div class="layanan-card">
+                        <h3>Sewa Mingguan</h3>
+                        <p>Lebih hemat untuk penggunaan menengah.</p>
+                    </div>
+
+                    <div class="layanan-card">
+                        <h3>Sewa Bulanan</h3>
+                        <p>Cocok untuk kebutuhan bisnis.</p>
+                    </div>
+
+                    <div class="layanan-card">
+                        <h3>Dengan Sopir</h3>
+                        <p>Nyaman tanpa repot menyetir.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- KEUNGGULAN -->
+            <div class="keunggulan">
+                <h2>Kenapa Memilih Kami?</h2>
+                <ul>
+                    <li>Armada lengkap & terawat</li>
+                    <li>Proses pemesanan mudah</li>
+                    <li>Harga transparan</li>
+                    <li>Customer support responsif</li>
+                </ul>
+            </div>
+
+            <!-- ARMADA FAVORIT -->
+            <div class="armada">
+                <h2>Armada Favorit</h2>
+
+                <div class="armada-grid">
+                    <div class="armada-card">
+                        <i class="fa-solid fa-car"></i>
+                        <h4>Toyota Avanza</h4>
+                        <p>Nyaman dan irit untuk keluarga.</p>
+                    </div>
+
+                    <div class="armada-card">
+                        <i class="fa-solid fa-car-side"></i>
+                        <h4>Fortuner</h4>
+                        <p>Tangguh dan elegan.</p>
+                    </div>
+
+                    <div class="armada-card">
+                        <i class="fa-solid fa-van-shuttle"></i>
+                        <h4>Hiace</h4>
+                        <p>Ideal untuk perjalanan rombongan.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARA SEWA -->
+            <div class="cara-sewa">
+                <h2>Cara Sewa Mobil</h2>
+
+                <div class="cara-grid">
+                    <div class="cara-step">
+                        <span>1</span>
+                        <p>Pilih mobil</p>
+                    </div>
+                    <div class="cara-step">
+                        <span>2</span>
+                        <p>Isi form sewa</p>
+                    </div>
+                    <div class="cara-step">
+                        <span>3</span>
+                        <p>Lakukan pembayaran</p>
+                    </div>
+                    <div class="cara-step">
+                        <span>4</span>
+                        <p>Mobil siap digunakan</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- CTA -->
+            <div class="cta-home">
+                <h2>Siap Memulai Perjalanan?</h2>
+                <p>Pilih mobil terbaik dan nikmati perjalanan tanpa ribet.</p>
+                <a href="mobil.php" class="btn-primary">Sewa Sekarang</a>
+            </div>
+
+        </div>
+    </section>
+
+    <?php include 'layout/footer.php'; ?>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll(".slide");
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove("active"));
+            slides[index].classList.add("active");
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        setInterval(nextSlide, 6000);
+    </script>
+
+
 
 </body>
+
 </html>
