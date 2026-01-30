@@ -29,6 +29,7 @@ $id_user   = $is_member ? $_SESSION['user']['id_user'] : NULL;
 
 $nama_member = "";
 $hp_member   = "";
+$alamat_member = "";
 $diskon      = 0;
 
 if ($is_member) {
@@ -37,12 +38,13 @@ if ($is_member) {
     $nama_member = $_SESSION['user']['nama'];
 
     // ambil no_hp dari database (karena tidak disimpan di session)
-    $u = $conn->prepare("SELECT no_hp FROM users WHERE id_user = ?");
+    $u = $conn->prepare("SELECT no_hp,alamat FROM users WHERE id_user = ?");
     $u->bind_param("i", $id_user);
     $u->execute();
     $user = $u->get_result()->fetch_assoc();
 
     $hp_member = $user['no_hp'];
+    $alamat_member = $user['alamat'];
 
     // hitung total sewa
     $c = $conn->prepare("SELECT COUNT(*) total FROM penyewaan WHERE id_user = ?");
@@ -63,6 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $nama = $is_member ? $nama_member : trim($_POST['nama']);
     $hp = $is_member ? $hp_member : trim($_POST['hp']);
+    $alamat = $is_member ? $alamat_member : trim($_POST['alamat']);
 
     if ($tgl_kembali <= $tgl_sewa) {
         $error = "Tanggal kembali harus lebih dari tanggal sewa!";
@@ -80,12 +83,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         /* SIMPAN PENYEWAAN */
         $sql = "INSERT INTO penyewaan
-                (id_user, id_mobil, tanggal_sewa, tanggal_kembali, lama_sewa, total_harga, status_sewa, nama_penyewa, no_hp)
-                VALUES (?, ?, ?, ?, ?, ?, 'booking', ?, ?)";
+                (id_user, id_mobil, tanggal_sewa, tanggal_kembali, lama_sewa, total_harga, status_sewa, nama_penyewa, no_hp,alamat)
+                VALUES (?, ?, ?, ?, ?, ?, 'booking', ?, ?, ?)";
 
         $stmt = $conn->prepare($sql);
         $stmt->bind_param(
-            "iissidss",
+            "iissidsss",
             $id_user,
             $id_mobil,
             $tgl_sewa,
@@ -93,7 +96,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $hari,
             $total,
             $nama,
-            $hp
+            $hp,
+            $alamat
         );
 
         if ($stmt->execute()) {
@@ -165,6 +169,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <label>No HP</label>
                 <input type="text" name="hp" value="<?= htmlspecialchars($hp_member); ?>" <?= $is_member ? 'readonly' : 'required'; ?> autocomplete="off">
+                
+                <label>Alamat</label>
+                <input type="text" name="alamat" value="<?= htmlspecialchars($alamat_member); ?>" <?= $is_member ? 'readonly' : 'required'; ?> autocomplete="off">
 
                 <label>Tanggal Sewa</label>
                 <input type="date" name="tgl_sewa" required>

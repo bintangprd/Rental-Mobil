@@ -187,9 +187,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         </tr>
                         <tr>
                             <td><label for="password">Password:</label></td>
+                            <p>Password minimal 8 karakter dan mengandung huruf besar, huruf kecil, angka, dan simbol!</p>
                             <td>
                                 <div class="password-wrapper">
-                                    <input type="password" name="password" id="password" required autocomplete="off">
+                                    <input type="password" name="password" id="password" required autocomplete="off"  >
                                     <i class="fa-solid fa-eye" onclick="togglePassword('password',this)"></i>
                                 </div>
                             </td>

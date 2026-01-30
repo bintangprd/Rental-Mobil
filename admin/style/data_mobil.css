@@ -74,12 +74,14 @@
 }
 
 /* EDIT */
-.data-table td .btn-edit {
+.data-table td .btn-accept {
     background: #2563eb;
     color: #ffffff;
 }
 
-.data-table td .btn-edit:hover {
+
+
+.data-table td .btn-accept:hover {
     background: #1e40af;
     transform: translateY(-1px);
 }

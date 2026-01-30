@@ -7,9 +7,18 @@ if (!isset($_SESSION['admin_login'])) {
     exit;
 }
 
-$sql = "SELECT * FROM penyewaan";
+$sql = "
+    SELECT 
+        p.*, 
+        pb.id_pembayaran,
+        pb.status AS status_pembayaran
+    FROM penyewaan p
+    LEFT JOIN pembayaran pb ON p.id_sewa = pb.id_sewa
+";
 $result = mysqli_query($conn, $sql);
 $total = mysqli_num_rows($result);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -98,7 +107,15 @@ $total = mysqli_num_rows($result);
                                     <td><?= $row['total_harga'] ?></td>
                                     <td><?= $row['status_sewa'] ?></td>
                                     <td><a href="#" class="btn-action btn-delete">Tolak</a></td>
-                                    <td><a href="#" class="btn-action btn-accept">Terima</a></td>
+                                    <td>
+                                        <?php if ($row['status_sewa'] !== 'selesai'): ?>
+                                        <a href="selesai_penyewaan.php?id_sewa=<?=$row['id_sewa']?>"
+                                            onclick="return confirm('Selesaikan Penyewaan ini?')"
+                                            class="btn-action btn-accept">Selesai</a>
+                                        <?php else: ?>
+                                            <span class="btn-action btn-selesai" > Selesai</span>
+                                        <?php endif; ?>
+                                    </td>
                                 </tr>
                             <?php endwhile; ?>
                         <?php endif; ?>

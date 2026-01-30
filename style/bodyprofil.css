@@ -91,3 +91,43 @@
         grid-template-columns: 1fr;
     }
 }
+
+
+/* SERVICE */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 25px;
+}
+
+.service-card {
+    background: #fff;
+    padding: 30px 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.service-card i {
+    font-size: 32px;
+    color: #1E40AF;
+    margin-bottom: 12px;
+}
+
+.service-card h3 {
+    margin-bottom: 8px;
+    color: #1E40AF;
+}
+
+.service-card p {
+    color: #4B5563;
+    font-size: 15px;
+}
+
+/* RESPONSIVE SERVICE */
+@media (max-width: 768px) {
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+}
