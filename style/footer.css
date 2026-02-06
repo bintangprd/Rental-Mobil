@@ -28,6 +28,12 @@
 .footer-box p {
     font-size: 14px;
     line-height: 1.6;
+    color: #ffff;
+}
+.footer-box p i {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #ffff;
 }
 
 /* MENU */
@@ -77,6 +83,9 @@
     text-align: center;
     padding: 15px;
     font-size: 14px;
+}
+.footer-bottom p {
+    color: #fff;
 }
 
 /* RESPONSIVE */

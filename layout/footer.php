@@ -25,8 +25,8 @@
         <!-- KONTAK -->
         <div class="footer-box">
             <h4>Kontak Kami</h4>
-            <p><i class="fa-solid fa-location-dot"></i> Jakarta, Indonesia</p>
-            <p><i class="fa-solid fa-phone"></i> 0812-3456-7890</p>
+            <p><i class="fa-solid fa-location-dot"></i> Bandung, Indonesia</p>
+            <p><i class="fa-solid fa-phone"></i> 0896-8378-1287</p>
             <p><i class="fa-solid fa-envelope"></i> rentalmobil@gmail.com</p>
         </div>
 

@@ -92,6 +92,10 @@ ul {
     transform: translateY(-2px);
 }
 
+h3{
+    color: #1E40AF;
+}
+
 /* ================= VISI MISI ================= */
 .visi-misi {
     display: grid;
